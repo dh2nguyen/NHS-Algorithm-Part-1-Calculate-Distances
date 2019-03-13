@@ -1,16 +1,18 @@
+# v2 March 13, 2019
+
 # NHS-Algorithm-Part-1-Calculate-Distances
 This is the R script that calculates distances between two sets of (x,y) coordinates/points: Group1 vs Group2.
 
 # NOTE: This script is best viewed in a plain text reader. 
 
-
-# Script for calculating the distances between points. Part 1.
+# Script for calculating the distances between 2D points. Part 1.
 # This script is for use in the Numerical Histogram Score (NHS) algorithm. 
    # This is part 1 (distance calculations) of the scripts required to use the NHS algorithm. 
    # Part 2 is the script for calculating the NHS value. Part 2 is a separate script than Part 1.
 
 # By David H. Nguyen, PhD, www.TSG-Lab.org
 
+# NOTE: This script is best viewed in a plain text reader. 
 
 
 
@@ -24,33 +26,24 @@ This is the R script that calculates distances between two sets of (x,y) coordin
 
 # Sample Data Frame to Load
 
-#   x.grp1  y.grp1      x.grp2  y.grp2
-#     2       4           20      25
-#     6       10          31      66
-#     16      55          53      82
+#   x.grp1  y.grp1    |   x.grp2  y.grp2
+#     2       4       |   20      25
+#     6       10      |   31      66
+#     16      55      |   53      82
 
 
 # Two Sample Results That Are Produced By This Script 
 # (Result 1 will be side-by-side with Result 2, not stacked in the same columns.)
-# This script will create a .csv file in your working directory called "sample_data_output"
+# This script will create a .csv file in your working directory called "sample_data_output_distances.csv"
 
 
-# Result 1
+# The resulting data will be structured like this:
 
-#       who2who           Group1.1
-#   Grp1-1 to Grp2-1        23
-#   Grp1-1 to Grp2-2        54
-#   Grp1-1 to Grp2-3        68
-#   Grp1-1 to Grp2-4        53
-
-
-# Result 2
-
-#       who2who           Group1.2
-#   Grp1-2 to Grp2-1        45
-#   Grp1-2 to Grp2-2        24
-#   Grp1-2 to Grp2-3        84
-#   Grp1-2 to Grp2-4        11
+#   who2who.1           point_1   |      who2who.2             point_2
+#   Grp1-1 to Grp2-1    23        |      Grp1-2 to Grp2-1      45
+#   Grp1-1 to Grp2-2    54        |      Grp1-2 to Grp2-2      24
+#   Grp1-1 to Grp2-3    68        |      Grp1-2 to Grp2-3      84
+#   Grp1-1 to Grp2-4    53        |      Grp1-2 to Grp2-4      11
 
 
 
@@ -65,8 +58,8 @@ This is the R script that calculates distances between two sets of (x,y) coordin
   # The order of the 3rd column from left to right MUST be the x-coordinate of Group2, then the y-coordinate of Group2. 
 # The contents of rows of all columns (1) must be numbers and (2) cannot be empty. 
 
-# This script will create a .csv file in your working directory called "sample_data_output"
-
+# The sample data contains six columns, but the file is formatted as described above. 
+  # So, only the first four columns (which are the first two groups) will be analyzed by this script. 
 
 # End of ReadMe Info
 ############
